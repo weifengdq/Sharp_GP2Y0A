@@ -1,19 +1,3 @@
-# Sharp_GP2Y0A
-GP2Y0A02YK0F, GP2Y0A710K0F Arduino Program  
-
-
-## GP2Y0A02YK0F
-![GP2Y0A02YK0F](GP2Y0A02YK0F\GP2Y0A02YK0F.png)  
-The Sensor parameters:  
-- 20~150cm Analog output type.  
-- 4.5 to 5.5V, 33mA
-- Block diagram ![block](GP2Y0A02YK0F\02_block_diagram.png) 
-- Timing Chart ![chart](GP2Y0A02YK0F\02_timing_chart.png)  
-- Output ![output](GP2Y0A02YK0F\02_output.png)  
-
-I used look-up table method, reference to the V-cm Chart. Vout connect to A0 Pin.    
-
-```Arduino
 //SHARP GP2Y0A02
 //Yellow Vout
 //Black GND
@@ -52,6 +36,7 @@ void getDistance(SHARP* Sharp) {
 }
 
 void setup() {
+  // put your setup code here, to run once:
   Serial.begin(115200);
 }
 
@@ -65,21 +50,3 @@ void loop() {
 //    Serial.println(v);
   }  
 }
-```
-
-The measure frequency is 20Hz.  
-
-
-
-## GP2Y0A710K0F
-![GP2Y0A02YK0F](GP2Y0A710K0F\GP2Y0A02YK0F.png)  
-
-The Sensor parameters:  
-
-- 100~550cm Analog output type  
-- 4.5~5.5V, 30mA
-- Block diagram ![710block](GP2Y0A710K0F\710_block_diagram.png)  
-- timing chart ![710 timing chart](GP2Y0A710K0F\710_timing_chart.png)  
-- Output ![output](GP2Y0A710K0F\710_output.png)  
-
-First of all, I used formula method, reference to the V-1/cm chart. But the data is so terrible, I had to used look-up table method. Code refrence to [GP2Y0A710K0F](/GP2Y0A710K0F) Folder, connect Vout to A0 and the measure frequency will be 40Hz.   
